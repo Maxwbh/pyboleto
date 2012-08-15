@@ -6,8 +6,85 @@ from pyboleto.bank.bradesco import BoletoBradesco
 from pyboleto.bank.caixa import BoletoCaixa
 from pyboleto.bank.bancodobrasil import BoletoBB
 from pyboleto.bank.santander import BoletoSantander
+from pyboleto.bank.brb import BoletoBrb
 from pyboleto.pdf import BoletoPDF
 import datetime
+
+def print_brb():
+    listaDados = []
+    for i in range(2):
+        d = BoletoBrb()
+        
+        
+        d.cedente = 'Yzx COLOR'
+        d.cedente_documento = "01.689.998/0001-02"
+        d.cedente_endereco = "RUA XXXXXX BAIRRO YYYY BRASILIA YYYYYYY"
+        d.agencia_cedente = '106'
+        d.conta_cedente = '6000970'
+    
+        d.instrucoes = [
+            "- Instruções de Responsabilidade do Cedente",
+            "- Protestar após 5 dias de vencido,",
+            "- Juros de Mora de 2,00 % ao Mês,",
+            "- Cobrar multa de 2,00% após o vencimento.",
+           
+            ]
+    
+    
+        ########## Boleto    #########
+        d.convenio = '1'
+        d.especie_documento = 'NP'
+        
+        d.numero_documento = '8466'    
+        d.nosso_numero = '082983'
+        
+        d.data_vencimento = datetime.date(2012, 8, 21)
+        d.data_documento = datetime.date(2012, 7, 28)
+        d.data_processamento = datetime.date(2012, 8, 1)
+    
+        d.demonstrativo = [
+            "- Venda Nro. 38310 FASEP ",
+            "- Sol Formaturas 3233-9898"
+            ]
+        d.valor_documento = 203.70
+    
+     
+    
+        #### Geração de Numeração sequencial para homologação dos boletos ### 
+        d.numero_documento =  str(int(d.numero_documento ) + i)
+        d.nosso_numero = str(int(d.nosso_numero) + i)
+        ####
+        
+        d.sacado = [
+        "Cliente Teste xx %02d x ( %s )x-- (%s ) ---" %(i, d.numero_documento, d.nosso_numero),
+        "Rua Desconhecida, 00/0000 - Não Sei - Cidade - Cep. 00000-000",
+        ""
+        ]
+     
+        listaDados.append(d)
+
+     
+    boleto = BoletoPDF('boleto-brb-formato-carne-teste.pdf', True)
+    for i in range(0, len(listaDados), 2):
+        boleto.drawBoletoCarneDuplo(
+            listaDados[i + 1], 
+            listaDados[i],
+            
+        )
+        boleto.nextPage()
+    boleto.save()
+
+
+    boleto = BoletoPDF('boleto-brb-formato-normal-teste.pdf')
+    for i in range(len(listaDados)):
+        boleto.drawBoleto(listaDados[i])
+        boleto.nextPage()
+
+    boleto.save()
+
+
+
+
 
 
 def print_bb():
@@ -91,10 +168,11 @@ def print_real():
         listaDadosReal.append(d)
 
     # Real Formato normal - uma pagina por folha A4
-    boleto = BoletoPDF('boleto-real-formato-normal-teste.pdf')
+    boleto = BoletoPDF('boleto-real-formato-noral-teste.pdf')
     for i in range(len(listaDadosReal)):
-        boleto.drawBoleto(listaDadosReal[i])
+        boleto.drawBoleto(listaDadosReal[i])        
         boleto.nextPage()
+        
     boleto.save()
 
 
@@ -258,14 +336,17 @@ def print_all():
     print "     Printing Example Boletos     "
     print "----------------------------------"
 
+    print "Banco de Brasilia (BRB)"
+    print_brb()
+
     print "Banco do Brasil"
     print_bb()
 
     print "Bradesco"
     print_bradesco()
 
-    #print "Itau"
-    #print_itau()
+    print "Itau"
+    print_itau()
 
     print "Caixa"
     print_caixa()
@@ -275,7 +356,6 @@ def print_all():
 
     print "Santander"
     print_santander()
-
     print "----------------------------------"
     print "Ok"
 

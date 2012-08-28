@@ -8,6 +8,7 @@ from pyboleto.bank.bancodobrasil import BoletoBB
 from pyboleto.bank.santander import BoletoSantander
 from pyboleto.bank.brb import BoletoBrb
 from pyboleto.pdf import BoletoPDF
+from pyboleto.html import BoletoHTML
 import datetime
 
 def print_brb():
@@ -82,7 +83,12 @@ def print_brb():
 
     boleto.save()
 
+    boleto = BoletoHTML('boleto-brb-formato-normal-teste.html')
+    for i in range(len(listaDados)):
+        boleto.drawBoleto(listaDados[i])
+        boleto.nextPage()
 
+    boleto.save()
 
 
 

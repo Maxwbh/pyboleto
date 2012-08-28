@@ -82,11 +82,11 @@ class BoletoHTML(object):
         image_path = os.path.join(pyboleto_dir, 'media', logo_image)
         return image_path
 
-    def _get64codebar(self,codigo):
+    def _get64codebar(self, codigo):
         barra = barcode.codigodebarra()
     
         # formato que deseja salvar a imagem (PNG,GIF)
-        tipo='GIF'
+        tipo = 'GIF'
     
         # retornando uma imagem a partir do código de barra
         image = barra.getcodbarra(codigo)
@@ -142,12 +142,12 @@ class BoletoHTML(object):
                     <div class="rotulo">Vencimento</div> {}
                 </td>
             </tr>
-        """.format(boletoDados.cedente, boletoDados.agencia_conta_cedente, 
+        """.format(boletoDados.cedente, boletoDados.agencia_conta_cedente,
             boletoDados.cedente_documento, boletoDados.data_vencimento.strftime('%d/%m/%Y'))
 
         sacado0 = boletoDados.sacado[0]
         if len(sacado0) > 63: # Melhorar isso
-            sacado0 = sacado0[:63-len(sacado0)-4] + ' ...'
+            sacado0 = sacado0[:63 - len(sacado0) - 4] + ' ...'
 
         self.html += """<tr>
                 <td>
@@ -163,7 +163,7 @@ class BoletoHTML(object):
                     <div class="rotulo">Data Documento</div> {}
                 </td>
             </tr>
-        """.format(sacado0, boletoDados.format_nosso_numero(), 
+        """.format(sacado0, boletoDados.format_nosso_numero(),
             boletoDados.numero_documento, boletoDados.data_documento.strftime('%d/%m/%Y'))
 
         valorDocumento = self._formataValorParaExibir(boletoDados.valor_documento)
@@ -263,7 +263,7 @@ class BoletoHTML(object):
                 </td>
             </tr>
         """.format(boletoDados.data_documento.strftime('%d/%m/%Y'), boletoDados.numero_documento,
-            boletoDados.especie_documento, boletoDados.aceite, 
+            boletoDados.especie_documento, boletoDados.aceite,
             boletoDados.data_processamento.strftime('%d/%m/%Y'), boletoDados.format_nosso_numero())
 
         valorDocumento = self._formataValorParaExibir(boletoDados.valor_documento)
@@ -290,7 +290,7 @@ class BoletoHTML(object):
             </tr>
         """.format(boletoDados.carteira, boletoDados.especie, boletoDados.quantidade, valor, valorDocumento)
 
-        intrucoes = ['','','']
+        intrucoes = ['', '', '']
         for i in range(3):
             try:
                 intrucoes[i] = boletoDados.instrucoes[i]

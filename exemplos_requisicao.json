@@ -1,0 +1,305 @@
+{
+  "exemplos": {
+    "bradesco": {
+      "descricao": "Exemplo de boleto Bradesco (237)",
+      "requisicao": {
+        "formato": "pdf",
+        "codigo_banco": "237",
+        "cedente": "Empresa ACME LTDA",
+        "cedente_documento": "12.345.678/0001-90",
+        "cedente_endereco": "Rua Exemplo, 123 - Centro - São Paulo/SP - CEP: 01234-567",
+        "agencia_cedente": "0278-0",
+        "conta_cedente": "0039232-4",
+        "carteira": "06",
+        "nosso_numero": "2125525",
+        "numero_documento": "2125525",
+        "data_vencimento": "2024-12-31",
+        "data_documento": "2024-11-03",
+        "valor_documento": 8280.00,
+        "sacado_nome": "João da Silva",
+        "sacado_documento": "123.456.789-00",
+        "sacado_endereco": "Rua do Cliente, 456",
+        "sacado_bairro": "Centro",
+        "sacado_cidade": "São Paulo",
+        "sacado_uf": "SP",
+        "sacado_cep": "01234-567",
+        "instrucoes": [
+          "Não receber após o vencimento",
+          "Multa de 2% após o vencimento"
+        ]
+      }
+    },
+    "banco_do_brasil": {
+      "descricao": "Exemplo de boleto Banco do Brasil (001)",
+      "requisicao": {
+        "formato": "pdf",
+        "codigo_banco": "001",
+        "format_convenio": 7,
+        "format_nnumero": 1,
+        "convenio": "7777777",
+        "cedente": "Empresa XYZ LTDA",
+        "cedente_documento": "98.765.432/0001-10",
+        "cedente_endereco": "Av. Principal, 500 - Jardins - São Paulo/SP - CEP: 01400-000",
+        "agencia_cedente": "9999",
+        "conta_cedente": "99999",
+        "carteira": "18",
+        "nosso_numero": "87654",
+        "numero_documento": "27.030195.10",
+        "especie_documento": "DM",
+        "data_vencimento": "2024-12-31",
+        "data_documento": "2024-11-03",
+        "valor_documento": 2952.95,
+        "sacado_nome": "Maria Oliveira Santos",
+        "sacado_documento": "987.654.321-00",
+        "sacado_endereco": "Rua das Flores, 789",
+        "sacado_bairro": "Vila Mariana",
+        "sacado_cidade": "São Paulo",
+        "sacado_uf": "SP",
+        "sacado_cep": "04567-890",
+        "instrucoes": [
+          "Protestar após 5 dias de vencido",
+          "Não receber após 30 dias de vencido"
+        ]
+      }
+    },
+    "brb": {
+      "descricao": "Exemplo de boleto BRB - Banco de Brasília (070)",
+      "requisicao": {
+        "formato": "html",
+        "codigo_banco": "070",
+        "cedente": "Empresa ABC LTDA",
+        "cedente_documento": "01.689.998/0001-02",
+        "cedente_endereco": "SCS Quadra 06 Bloco A - Brasília/DF - CEP: 70300-000",
+        "agencia_cedente": "106",
+        "conta_cedente": "6000970",
+        "carteira": "1",
+        "convenio": "1",
+        "nosso_numero": "082983",
+        "numero_documento": "8466",
+        "especie_documento": "NP",
+        "data_vencimento": "2024-12-31",
+        "data_documento": "2024-11-03",
+        "valor_documento": 203.70,
+        "sacado_nome": "Pedro Henrique Costa",
+        "sacado_documento": "111.222.333-44",
+        "sacado_endereco": "SGAS 910 Bloco A Apartamento 101",
+        "sacado_bairro": "Asa Sul",
+        "sacado_cidade": "Brasília",
+        "sacado_uf": "DF",
+        "sacado_cep": "70390-100",
+        "instrucoes": [
+          "Protestar após 5 dias de vencido",
+          "Juros de Mora de 2,00% ao Mês",
+          "Cobrar multa de 2,00% após o vencimento"
+        ],
+        "demonstrativo": [
+          "Referente a Nota Fiscal 12345",
+          "Serviços prestados em outubro/2024"
+        ]
+      }
+    },
+    "caixa": {
+      "descricao": "Exemplo de boleto Caixa Econômica Federal (104)",
+      "requisicao": {
+        "formato": "pdf",
+        "codigo_banco": "104",
+        "cedente": "Comercial Silva & Cia LTDA",
+        "cedente_documento": "22.333.444/0001-55",
+        "cedente_endereco": "Rua das Palmeiras, 250 - Centro - Rio de Janeiro/RJ",
+        "agencia_cedente": "1234",
+        "conta_cedente": "567890-1",
+        "carteira": "SR",
+        "nosso_numero": "99999999",
+        "numero_documento": "99999999",
+        "data_vencimento": "2024-12-15",
+        "data_documento": "2024-11-03",
+        "valor_documento": 1500.00,
+        "sacado_nome": "Ana Carolina Pereira",
+        "sacado_documento": "555.666.777-88",
+        "sacado_endereco": "Av. Atlântica, 1000",
+        "sacado_bairro": "Copacabana",
+        "sacado_cidade": "Rio de Janeiro",
+        "sacado_uf": "RJ",
+        "sacado_cep": "22021-001"
+      }
+    },
+    "itau": {
+      "descricao": "Exemplo de boleto Itaú (341)",
+      "requisicao": {
+        "formato": "pdf",
+        "codigo_banco": "341",
+        "cedente": "Tech Solutions LTDA",
+        "cedente_documento": "33.444.555/0001-66",
+        "cedente_endereco": "Av. Paulista, 1000 - Bela Vista - São Paulo/SP",
+        "agencia_cedente": "0057",
+        "conta_cedente": "12345-6",
+        "carteira": "175",
+        "nosso_numero": "12345678",
+        "numero_documento": "DOC-2024-001",
+        "data_vencimento": "2024-12-20",
+        "data_documento": "2024-11-03",
+        "valor_documento": 5000.00,
+        "sacado_nome": "Carlos Eduardo Martins",
+        "sacado_documento": "999.888.777-66",
+        "sacado_endereco": "Rua Augusta, 1500",
+        "sacado_bairro": "Consolação",
+        "sacado_cidade": "São Paulo",
+        "sacado_uf": "SP",
+        "sacado_cep": "01304-001",
+        "instrucoes": [
+          "Não receber após o vencimento",
+          "Após vencimento cobrar multa de 2%",
+          "Após vencimento cobrar juros de 1% ao mês"
+        ]
+      }
+    },
+    "santander": {
+      "descricao": "Exemplo de boleto Santander (033)",
+      "requisicao": {
+        "formato": "pdf",
+        "codigo_banco": "033",
+        "cedente": "Distribuidora Norte LTDA",
+        "cedente_documento": "44.555.666/0001-77",
+        "cedente_endereco": "Rua Comercial, 800 - Industrial - Manaus/AM",
+        "agencia_cedente": "0123",
+        "conta_cedente": "98765432",
+        "carteira": "101",
+        "nosso_numero": "1234567890123",
+        "numero_documento": "NF-456789",
+        "data_vencimento": "2024-12-25",
+        "data_documento": "2024-11-03",
+        "valor_documento": 3500.00,
+        "sacado_nome": "Juliana Ferreira Lima",
+        "sacado_documento": "222.333.444-55",
+        "sacado_endereco": "Av. Eduardo Ribeiro, 500",
+        "sacado_bairro": "Centro",
+        "sacado_cidade": "Manaus",
+        "sacado_uf": "AM",
+        "sacado_cep": "69010-001"
+      }
+    },
+    "banrisul": {
+      "descricao": "Exemplo de boleto Banrisul (041)",
+      "requisicao": {
+        "formato": "pdf",
+        "codigo_banco": "041",
+        "cedente": "Gaúcha Comércio LTDA",
+        "cedente_documento": "55.666.777/0001-88",
+        "cedente_endereco": "Av. Borges de Medeiros, 300 - Centro - Porto Alegre/RS",
+        "agencia_cedente": "0123",
+        "conta_cedente": "1234567-89",
+        "carteira": "1",
+        "nosso_numero": "12345678901234567890",
+        "numero_documento": "DOC-RS-001",
+        "data_vencimento": "2024-12-28",
+        "data_documento": "2024-11-03",
+        "valor_documento": 2750.00,
+        "sacado_nome": "Roberto da Silva Machado",
+        "sacado_documento": "777.888.999-00",
+        "sacado_endereco": "Rua dos Andradas, 1000",
+        "sacado_bairro": "Centro Histórico",
+        "sacado_cidade": "Porto Alegre",
+        "sacado_uf": "RS",
+        "sacado_cep": "90020-000"
+      }
+    },
+    "hsbc": {
+      "descricao": "Exemplo de boleto HSBC (399)",
+      "requisicao": {
+        "formato": "pdf",
+        "codigo_banco": "399",
+        "cedente": "Importadora Global LTDA",
+        "cedente_documento": "66.777.888/0001-99",
+        "cedente_endereco": "Av. Brigadeiro Faria Lima, 2000 - São Paulo/SP",
+        "agencia_cedente": "1234",
+        "conta_cedente": "567890",
+        "carteira": "CNR",
+        "nosso_numero": "1234567890",
+        "numero_documento": "IMP-2024-100",
+        "data_vencimento": "2024-12-30",
+        "data_documento": "2024-11-03",
+        "valor_documento": 10000.00,
+        "sacado_nome": "Empresa Importação XYZ LTDA",
+        "sacado_documento": "11.222.333/0001-44",
+        "sacado_endereco": "Rua do Porto, 1500",
+        "sacado_bairro": "Barra Funda",
+        "sacado_cidade": "São Paulo",
+        "sacado_uf": "SP",
+        "sacado_cep": "01140-000"
+      }
+    },
+    "minimo": {
+      "descricao": "Exemplo mínimo - apenas campos obrigatórios",
+      "requisicao": {
+        "formato": "pdf",
+        "codigo_banco": "237",
+        "cedente": "Minha Empresa",
+        "cedente_documento": "12.345.678/0001-90",
+        "cedente_endereco": "Rua Exemplo, 100",
+        "agencia_cedente": "1234",
+        "conta_cedente": "56789-0",
+        "carteira": "06",
+        "nosso_numero": "1234567",
+        "numero_documento": "1234567",
+        "data_vencimento": "2024-12-31",
+        "valor_documento": 100.00
+      }
+    },
+    "html_format": {
+      "descricao": "Exemplo gerando boleto em HTML ao invés de PDF",
+      "requisicao": {
+        "formato": "html",
+        "codigo_banco": "237",
+        "cedente": "Empresa ACME LTDA",
+        "cedente_documento": "12.345.678/0001-90",
+        "cedente_endereco": "Rua Exemplo, 123",
+        "agencia_cedente": "0278-0",
+        "conta_cedente": "0039232-4",
+        "carteira": "06",
+        "nosso_numero": "2125525",
+        "numero_documento": "2125525",
+        "data_vencimento": "2024-12-31",
+        "valor_documento": 8280.00,
+        "sacado_nome": "João da Silva",
+        "sacado_documento": "123.456.789-00",
+        "sacado_endereco": "Rua do Cliente, 456",
+        "sacado_bairro": "Centro",
+        "sacado_cidade": "São Paulo",
+        "sacado_uf": "SP",
+        "sacado_cep": "01234-567"
+      }
+    }
+  },
+  "curl_examples": {
+    "gerar_pdf": "curl -X POST http://localhost:5000/boleto/gerar -H 'Content-Type: application/json' -d @exemplos_requisicao.json",
+    "listar_bancos": "curl http://localhost:5000/bancos",
+    "health_check": "curl http://localhost:5000/health",
+    "validar_boleto": "curl -X POST http://localhost:5000/boleto/validar -H 'Content-Type: application/json' -d '{\"codigo_banco\":\"237\",\"cedente\":\"Empresa\",\"cedente_documento\":\"12.345.678/0001-90\",\"cedente_endereco\":\"Rua X\",\"agencia_cedente\":\"1234\",\"conta_cedente\":\"56789\",\"carteira\":\"06\",\"nosso_numero\":\"123\",\"numero_documento\":\"123\",\"data_vencimento\":\"2024-12-31\",\"valor_documento\":100}'"
+  },
+  "notas": {
+    "formatos_data": [
+      "YYYY-MM-DD (ex: 2024-12-31)",
+      "DD/MM/YYYY (ex: 31/12/2024)"
+    ],
+    "formatos_saida": [
+      "pdf - Gera boleto em PDF",
+      "html - Gera boleto em HTML"
+    ],
+    "campos_obrigatorios": [
+      "codigo_banco",
+      "cedente",
+      "cedente_documento",
+      "cedente_endereco",
+      "agencia_cedente",
+      "conta_cedente",
+      "carteira",
+      "nosso_numero",
+      "numero_documento",
+      "data_vencimento",
+      "valor_documento"
+    ],
+    "banco_do_brasil_especial": "O Banco do Brasil (001) requer os parâmetros adicionais 'format_convenio' (6, 7 ou 8) e 'format_nnumero' (1 ou 2)",
+    "instrucoes": "Campo 'instrucoes' aceita até 7 linhas de até 90 caracteres cada",
+    "demonstrativo": "Campo 'demonstrativo' aceita até 12 linhas de até 90 caracteres cada"
+  }
+}

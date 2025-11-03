@@ -29,3 +29,20 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 venv
+
+# API - Arquivos gerados
+boleto_*.pdf
+boleto_*.html
+meu_boleto.pdf
+teste_boleto.json
+logs/
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db

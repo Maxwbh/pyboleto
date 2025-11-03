@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  api-boleto:
+    build: .
+    container_name: api-boleto
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    environment:
+      - FLASK_APP=api_boleto.py
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

@@ -72,49 +72,64 @@ Installation
 You can install pyboleto either via the Python Package Index (PyPI)
 or from source.
 
-To install using pip,::
+To install using pip::
 
     $ pip install pyboleto
-
-To install using easy_install,::
-
-    $ easy_install pyboleto
 
 
 .. _pyboleto-installing-from-source:
 
-Downloading and installing from source
---------------------------------------
+Installing from source
+----------------------
 
 Download the latest version of pyboleto from
 http://pypi.python.org/pypi/pyboleto/
 
-You can install it by doing the following,::
+You can install it by doing the following::
 
-    $ tar xvfz pyboleto-0.0.0.tar.gz
-    $ cd pyboleto-0.0.0
-    $ python setup.py build
-    # python setup.py install # as root
+    $ tar xvfz pyboleto-0.2.11.tar.gz
+    $ cd pyboleto-0.2.11
+    $ pip install .
 
-.. _pyboleto-installing-from-hg:
+Or for development mode (editable install)::
+
+    $ pip install -e .
+
+.. _pyboleto-installing-from-git:
 
 Using the development version
 -----------------------------
 
-You can clone the repository by doing the following::
+You can clone the repository and install in development mode::
 
     $ git clone https://github.com/eduardocereto/pyboleto.git
+    $ cd pyboleto
+    $ pip install -e .
+
+Building distributions
+----------------------
+
+To build source and wheel distributions using the modern Python build tools::
+
+    $ pip install build
+    $ python -m build
+
+This will create distribution files in the ``dist/`` directory.
 
 .. _pyboleto-unittests:
 
 Executing unittests
 ===================
 
-You need either setuptools or distribute in order to execute the tests. Chances are you already have one or another. You also need `pdftohtml`_.::
+To run the test suite, install the package with test dependencies and run pytest::
 
-    $ cd pyboleto
-    $ python setup.py test
+    $ pip install -e .[test]
+    $ pytest
 
+You may also need `pdftohtml`_ for some PDF-related tests::
+
+    $ sudo apt-get install poppler-utils  # On Debian/Ubuntu
+    $ brew install poppler                # On macOS
 
 .. _pdftohtml: http://poppler.freedesktop.org/
 

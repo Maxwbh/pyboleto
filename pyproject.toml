@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyboleto"
+dynamic = ["version"]
+description = "Python Library to create 'boletos de cobrança bancária' for several Brazilian banks"
+authors = [
+    {name = "Eduardo Cereto Carvalho", email = "eduardocereto@gmail.com"}
+]
+license = {file = "LICENSE"}
+readme = "README.rst"
+requires-python = ">=3.6"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Framework :: Django",
+]
+dependencies = [
+    "reportlab>=2.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "build>=0.10.0",
+    "twine>=4.0.0",
+]
+test = [
+    "pytest>=7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/eduardocereto/pyboleto"
+"Source Code" = "https://github.com/eduardocereto/pyboleto"
+"Bug Tracker" = "https://github.com/eduardocereto/pyboleto/issues"
+Documentation = "http://packages.python.org/pyboleto/"
+
+[tool.setuptools]
+zip-safe = false
+script-files = ["bin/pyboleto_sample.py"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pyboleto*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "pyboleto.__version__"}
+
+[tool.setuptools.package-data]
+pyboleto = ["media/*.jpg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
